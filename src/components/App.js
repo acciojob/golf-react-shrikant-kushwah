@@ -15,13 +15,13 @@ class App extends Component {
         this.playgroundRef = React.createRef();
     };
 
-     buttonClickHandler() {
-    this.setState({ renderBall: true }, () => {
-      if (this.playgroundRef.current) {
-        this.playgroundRef.current.focus();
-      }
-    });
-  }
+    buttonClickHandler() {
+        this.setState({ renderBall: true }, () => {
+            if (this.playgroundRef.current) {
+                this.playgroundRef.current.focus();
+            }
+        });
+    }
 
     buttonClickHandler() {
         this.setState({ renderBall: true })
@@ -59,7 +59,12 @@ class App extends Component {
 
     render() {
         return (
-            <div className="playground">
+            <div
+                className="playground"
+                ref={this.playgroundRef}
+                tabIndex={0}
+                style={{ outline: "none" }}
+            >
                 {this.renderBallOrButton()}
             </div>
         )
