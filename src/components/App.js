@@ -30,6 +30,7 @@ class App extends Component {
         if (event.key === "ArrowRight") {
             this.setState(((preState) => {
                 const newPosition = preState.posi + 5;
+                console.log(newPosition)
                 return {
                     posi: newPosition,
                     ballPosition: { left: newPosition + "px" }
@@ -40,11 +41,11 @@ class App extends Component {
 
     // bind ArrowRight keydown event
     componentDidMount() {
-        document.addEventListener("keydown", this.handleKeyDown)
+        window.addEventListener("keydown", this.handleKeyDown)
     }
 
     componentWillUnmount() {
-        document.removeEventListener("keydown", this.handleKeyDown)
+        window.removeEventListener("keydown", this.handleKeyDown)
     }
 
     render() {
