@@ -12,16 +12,7 @@ class App extends Component {
         this.renderChoice = this.renderBallOrButton.bind(this)
         this.buttonClickHandler = this.buttonClickHandler.bind(this)
         this.handleKeyDown = this.handleKeyDown.bind(this)
-        this.playgroundRef = React.createRef();
     };
-
-    buttonClickHandler() {
-        this.setState({ renderBall: true }, () => {
-            if (this.playgroundRef.current) {
-                this.playgroundRef.current.focus();
-            }
-        });
-    }
 
     buttonClickHandler() {
         this.setState({ renderBall: true })
@@ -34,9 +25,9 @@ class App extends Component {
         }
     }
 
-
     //handle arrow right key
     handleKeyDown(event) {
+        if (!this.state.renderBall) return;
         if (event.key === "ArrowRight") {
             this.setState(((preState) => {
                 const newPosition = preState.posi + 5;
@@ -59,12 +50,7 @@ class App extends Component {
 
     render() {
         return (
-            <div
-                className="playground"
-                ref={this.playgroundRef}
-                tabIndex={0}
-                style={{ outline: "none" }}
-            >
+            <div className="playground">
                 {this.renderBallOrButton()}
             </div>
         )
