@@ -27,10 +27,9 @@ class App extends Component {
 
     //handle arrow right key
     handleKeyDown(event) {
-        if (this.state.renderBall && event.key === "ArrowRight") {
+        if (event.key === "ArrowRight") {
             this.setState(((preState) => {
                 const newPosition = preState.posi + 5;
-                console.log(newPosition)
                 return {
                     posi: newPosition,
                     ballPosition: { left: newPosition + "px" }
