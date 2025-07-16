@@ -12,7 +12,16 @@ class App extends Component {
         this.renderChoice = this.renderBallOrButton.bind(this)
         this.buttonClickHandler = this.buttonClickHandler.bind(this)
         this.handleKeyDown = this.handleKeyDown.bind(this)
+        this.playgroundRef = React.createRef();
     };
+
+     buttonClickHandler() {
+    this.setState({ renderBall: true }, () => {
+      if (this.playgroundRef.current) {
+        this.playgroundRef.current.focus();
+      }
+    });
+  }
 
     buttonClickHandler() {
         this.setState({ renderBall: true })
@@ -24,6 +33,7 @@ class App extends Component {
             return <button className="start" onClick={this.buttonClickHandler} >Start</button>
         }
     }
+
 
     //handle arrow right key
     handleKeyDown(event) {
