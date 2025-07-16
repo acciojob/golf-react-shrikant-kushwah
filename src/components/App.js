@@ -19,7 +19,7 @@ class App extends Component {
     }
     renderBallOrButton() {
         if (this.state.renderBall) {
-            return <div className="ball" style={this.state.ballPosition}></div>
+            return <div className="ball" id="ball" style={this.state.ballPosition}></div>
         } else {
             return <button className="start" onClick={this.buttonClickHandler} >Start</button>
         }
