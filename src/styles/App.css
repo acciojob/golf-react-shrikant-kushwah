@@ -2,16 +2,25 @@
     width:50%;
     height:50%;
     margin: auto;
+    position: relative;
 }
 body html .root {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 .ball{
     background-color: black;
     box-shadow: 0 10px 10px -6px;
-    position: relative;
-    right: 0px;
+    position: absolute;
     height: 50px;
     width: 50px;
     border-radius: 25px;
+    top: 0px;
+    left: 0px;
+}
+.start{
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }

@@ -21,7 +21,7 @@ class App extends Component {
         if (this.state.renderBall) {
             return <div className="ball" id="ball" style={this.state.ballPosition}></div>
         } else {
-return <button className="start" id="start" onClick={this.buttonClickHandler}>Start</button>
+            return <button className="start" id="start" onClick={this.buttonClickHandler}>Start</button>
         }
     }
 
@@ -33,7 +33,7 @@ return <button className="start" id="start" onClick={this.buttonClickHandler}>St
                 const newPosition = preState.posi + 5;
                 return {
                     posi: newPosition,
-                    ballPosition: { left: newPosition + "px" }
+                    ballPosition: { left: `${newPosition}px`}
                 }
             }))
         }
@@ -56,6 +56,5 @@ return <button className="start" id="start" onClick={this.buttonClickHandler}>St
         )
     }
 }
-
 
 export default App;
